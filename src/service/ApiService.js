@@ -5,7 +5,7 @@ const USER_API_BASE_URL='http://localhost:8787/users'
 class ApiService{
 
     addUser(user){  //Adding the User
-        return axios.post(USER_API_BASE_URL,user)
+        return axios.post(USER_API_BASE_URL+'/save',user)
     }
 
     fetchUsers(){   // Getting list of users

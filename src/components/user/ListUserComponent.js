@@ -23,6 +23,11 @@ class ListUserComponent extends React.Component{
         })
     }
 
+    addUser(){
+        window.localStorage.removeItem("userId")
+        this.props.history.push("/add-user")
+    }
+
     render(){
         return(
             <div>
