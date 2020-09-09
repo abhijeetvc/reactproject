@@ -9,19 +9,19 @@ class ListUserComponent extends React.Component{
             users:[],
             message:null
         }
-        this.loadUserList=this.loadUserList.bind(this)
+       // this.loadUserList=this.loadUserList.bind(this)
     }
 
-    componentDidMount(){   //Component lifecycle method
-        this.loadUserList()
-    }
+    // componentDidMount(){   //Component lifecycle method
+    //     this.loadUserList()
+    // }
 
-    loadUserList(){
-        ApiService.fetchUsers()
-        .then(res=>{
-            this.setState({users:res.data.result})
-        })
-    }
+    // loadUserList(){
+    //     ApiService.fetchUsers()
+    //     .then(res=>{
+    //         this.setState({users:res.data.result})
+    //     })
+    // }
 
     addUser(){
         window.localStorage.removeItem("userId")
@@ -30,10 +30,10 @@ class ListUserComponent extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="center">
                 <h2 className="text-center">User List</h2>
                 <button className="btn btn-danger" style={{width:'100px'}} onClick={()=>this.addUser()}>Add User</button>
-                <table className="table table-striped">
+                <table className="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th className="hidden">Id</th>
@@ -72,5 +72,6 @@ class ListUserComponent extends React.Component{
         )
     }
 }
+
 
 export default ListUserComponent

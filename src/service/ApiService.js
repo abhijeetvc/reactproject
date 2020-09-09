@@ -11,6 +11,14 @@ class ApiService{
     fetchUsers(){   // Getting list of users
         return axios.get(USER_API_BASE_URL)
     }
+
+    fetchUserById(userId){
+        return axios.get(USER_API_BASE_URL+'/getUser'+'/'+userId)
+    }
+
+    editUser(user){
+        return axios.put(USER_API_BASE_URL+'/updateuser',user)
+    }
 }
 
 export default new ApiService()
